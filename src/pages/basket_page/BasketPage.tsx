@@ -1,6 +1,6 @@
 import {FC} from 'react'
 import style from './BasketPage.module.scss'
-import { Link, redirect } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import BasketItem from '../../components/small_components/basket_card/BasketCard'
 import { useAppDispatch,useAppSelector } from '../../redux/hooks'
 import { clearBasket } from '../../redux/slices/menuToolkitSlice'
@@ -12,6 +12,8 @@ const Basket:FC =()=> {
  let totalPrice = useAppSelector(state=>state.menuToolkit.totalPrice)
 
  let dispatch = useAppDispatch()
+ let navigate = useNavigate()
+ let goBack =()=> navigate(-1)
 
 
   return (
@@ -47,9 +49,10 @@ const Basket:FC =()=> {
                     </div>
 
                     <div className={style.containerSecond}>
-                        <div className={style.containerLink}>
+                        <div className={style.containerLink} 
+                        onClick={()=>goBack()}>
                             <img src={require('../../assets/icons/backLink.png')} alt="" />
-                            <Link to={'/'}>Повернутися назад</Link>
+                            <p>Повернутися назад</p>
                         </div>
                         
                         <button>Заплатитти зараз</button>

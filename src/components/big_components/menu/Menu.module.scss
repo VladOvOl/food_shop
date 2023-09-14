@@ -1,12 +1,27 @@
 .container{
+    margin-top: 30px;
     
-    .containerLink{
+    
+    .containerLinks{
         display: flex;
         flex-direction: column;
+        align-items: center;
 
         img{
             width: 50px;
             height: 50px;
+        }
+
+        .containerLink{
+            width: 120px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            a{
+                font-size: 20px;
+                color: black;
+            }
         }
     }
 }

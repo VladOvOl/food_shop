@@ -1,6 +1,6 @@
 import {FC, useState} from 'react'
 import style from './Header.module.scss'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../../redux/hooks'
 import { changeStateBasketBtn, changeStateMenuBtn } from '../../../redux/slices/menuToolkitSlice'
 import Menu from '../menu/Menu'
@@ -13,16 +13,27 @@ const Header:FC = () => {
     let totalPrice = useAppSelector(state => state.menuToolkit.totalPrice)
 
     let[btn,setBtn]=useState(false)
-   
+    let navigate = useNavigate()
+    let goBack =()=> navigate(-1)
+
+    function closeMenu(){
+        goBack();
+        dispatch(changeStateMenuBtn())
+    }
 
     return (
     <header className={style.container}>
 
-        <Link className={style.containerMenu} to={btn?'/':'/menu'} 
-        onClick={()=>setBtn(!btn)}>
+
+        {
+            stateBasketContainer ? <div className={style.containerBack} onClick={()=>closeMenu()}>
+                    <img src={require('../../../assets/icons/icons8-назад-100.png')} alt="" width={30} height={30}/>
+                </div> :
+        <Link className={style.containerMenu} to={'/menu'} 
+        onClick={()=>dispatch(changeStateMenuBtn())}>
             <img src={require('../../../assets/icons/menu.png')}  alt="" />
         </Link>
-
+}
         <div className={style.containerLogo}>
             <img src={require('../../../assets/icons/logo.png')} alt="" height={55} width={55}/>
             <div className={style.containerTitle}>
@@ -31,7 +42,7 @@ const Header:FC = () => {
             </div>
         </div>
 
-        <NavLink to={'/basket'}>
+        <NavLink className={style.basketLink}to={'/basket'}>
             <div className={style.containerBasket/*stateBasketContainer ? [style.containerBasket , style.disable].join('  ') : style.containerBasket*/}>
                 <div className={style.containerPrice}>
                     <p>{totalPrice}</p>
@@ -44,8 +55,6 @@ const Header:FC = () => {
                 </div>
             </div>
         </NavLink>
-
-        {stateBasketContainer && <Menu/>}
     </header>
   )
 }

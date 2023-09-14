@@ -2,8 +2,8 @@ import  {FC} from 'react'
 import style from './Menu.module.scss'
 import { useDispatch } from 'react-redux'
 import { changeStateMenuBtn } from '../../../redux/slices/menuToolkitSlice'
-import { useAppSelector } from '../../../redux/hooks'
-import { Link } from 'react-router-dom'
+import { useAppDispatch, useAppSelector } from '../../../redux/hooks'
+import { NavLink } from 'react-router-dom'
 
 const  Menu:FC =()=> {
 
@@ -22,22 +22,63 @@ const  Menu:FC =()=> {
             </div>*/
 
 
+    let dispatch = useAppDispatch()
+    let stateBasketContainer = useAppSelector(state => state.menuToolkit.stateMenuBtn)
+
 
   return (
     <div className={style.container}>
-            <div className={style.containerLink}>
-                <img src={require('./icons/home.png')} alt="" />
-                <img src={require('./icons/combo.png')} alt="" />
-                <img src={require('./icons/pizza.png')} alt="" />
-                <img src={require('./icons/sushi.png')} alt="" />
-                <img src={require('./icons/burger.png')} alt="" />
-                <img src={require('./icons/combo.png')} alt="" />
-                <img src={require('./icons/ramen.png')} alt="" />
-                <img src={require('./icons/soup.png')} alt="" />
-                <img src={require('./icons/ramen.png')} alt="" />
-                <img src={require('./icons/salad.png')} alt="" />
+            <div className={style.containerLinks}>
+                
+                <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
+                    <img src={require('./icons/icons/home.png')} alt="" />
+                    <NavLink  to={'/'}className={style.link}>Home</NavLink>
+                </div>
+                
+                <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
+                    <img src={require('./icons/icons/combo.png')} alt="" />
+                    <NavLink  to={'/combo'}className={style.link}>Combo</NavLink>
+                </div>
+                
+
+                <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
+                <img src={require('./icons/icons/pizza.png')} alt="" />
+                <NavLink  to={'/pizza'}className={style.link}>Pizza</NavLink>
+                </div>
+                
+                <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
+                <img src={require('./icons/icons/sushi.png')} alt="" />
+                <NavLink  to={'/sushi'}className={style.link}>Sushi</NavLink>
+                </div>
+                
+                <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
+                <img src={require('./icons/icons/burger.png')} alt="" />
+                <NavLink  to={`/burger`}className={style.link}>Burgers</NavLink>
+                </div>
+                
+                <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
+                <img src={require('./icons/icons/bowley.png')} alt="" />
+                <NavLink  to={'/bowley'}className={style.link}>Bowley</NavLink>
+                </div>
+                
+                <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
+                <img src={require('./icons/icons/soup.png')} alt="" />
+                <NavLink  to={'/soup'}className={style.link}>Soup</NavLink>
+                </div>
+                
+                <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
+                <img src={require('./icons/icons/ramen.png')} alt="" />
+                <NavLink  to={'/wok'}className={style.link}>Wok</NavLink>
+                </div>
+
+                <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
+                <img src={require('./icons/icons/salad.png')} alt="" />
+                <NavLink  to={'/salad'}className={style.link}>Salad</NavLink>
+                </div>
+          
             </div>
         </div>
+        
   )
 }
 
