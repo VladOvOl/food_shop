@@ -1,0 +1,54 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+
+    @media (max-width:875px) {
+        flex-direction: column;
+    }
+}
+
+.containerFood{
+    width: 30%;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    @media (max-width:1115px) {
+        height: 380px;
+    }
+
+    @media (max-width:875px) {
+        width: 80%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+    .containerText{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p{
+            font-size: 18px;
+            text-align: center;
+        }
+
+        @media (max-width:1115px) {
+            h1{
+                font-size: 20px;
+            }
+        }
+
+    }
+
+    img{
+        width: 100%;
+
+    }
+}

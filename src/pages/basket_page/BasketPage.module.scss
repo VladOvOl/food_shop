@@ -1,0 +1,138 @@
+.container{
+    width: 100%;
+    min-height: 40vh;
+    background-color: white;
+    border-radius: 0 0 30px 30px;
+    
+}
+
+.wraper{
+    width: 821px;
+    min-height: 39vh;
+    margin: 0 auto 0;
+    padding-top: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.containerTop{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .containerLogo{
+
+        span{
+            color: #000;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.32px;
+        }
+    }
+
+    .img{
+        cursor: pointer;
+    }
+}
+.containerPizzaList{
+    flex: 1 1 auto;
+}
+
+
+.containerBottom{
+    width: 100%;
+
+    .containerFirst{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        .amountPizza{
+            color: #000;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.22px;
+        }
+
+        .totalPrice{
+            color: #000;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.22px;
+        }
+    }
+
+    .containerSecond{
+        display: flex;
+        justify-content: space-between;
+        
+
+
+        .containerLink{
+            width: 211px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            border: 2px solid #D3D3D3;
+            background: #FFF;
+            transition: all 0.4s ease-in-out;
+            cursor: pointer;
+
+            a{
+                color: #D3D3D3;
+                margin-left: 5px;
+                transition: all 0.4s ease-in-out;
+            }
+
+            &:hover{
+                border: 2px solid #8c8c8c;
+                transition: all 0.4s ease-in-out;
+                
+                a{
+                    color: #8c8c8c;
+                    transition: all 0.4s ease-in-out;
+                }
+
+            }
+        }
+
+        button{
+            width: 211px;
+            height: 55px;
+            border-radius: 30px;
+            color: white;
+            background-color: #FE5F1E;
+            border: none;
+            color: #FFF;
+            text-align: center;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            cursor: pointer;
+
+        }
+    }
+}
+
+.containerEmptyImg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .emptyImg{
+        width: 299px;
+        height: 255px;
+    }
+}

@@ -1,0 +1,98 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.containerSearch{
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 210px;
+    padding: 5px 10px;
+    cursor: pointer;
+    
+   
+    .containerInput{
+        display: flex;
+        align-items: center;
+    }
+
+    input{
+        border: none;
+        font-size: 16px;
+        width: 180px;
+
+        &:active , &:focus{
+            outline: 0;
+            outline-offset: 0;
+        }
+    }
+}
+
+.containerSort{
+    width: 251px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .imgActive{
+        transform: rotate(0.5turn);
+    }
+
+    .text{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .underline{
+        color:#FE5F1E;
+        text-decoration: underline dashed;
+    }
+
+    .containerMenuActive{
+        background-color: white;
+        border-radius: 10px;
+        padding: 10px 20px;
+        position: absolute;
+        top: 30px;
+        right: 0;
+        box-shadow: 1px 1px 1px 1px rgb(0, 0, 0) ;
+    }
+    .containerMenuPassive{
+        display: none;
+    }
+}
+
+@media (max-width:1500px) and (min-width:1215px) {
+    .container{
+        margin-top: 40px;
+    }
+
+    .containerSort{
+        margin-top: 25px;
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width:1215px) {
+    .container{
+        margin-top: 40px;
+    }
+
+    .containerLink{
+        display: flex;
+        margin-bottom: 40px;
+
+        .link{
+            margin-bottom: 15px;
+        }
+    }
+}
+
+@media (max-width:804px) {
+    .containerLink{
+        display: none;
+    }
+}

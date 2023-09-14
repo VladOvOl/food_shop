@@ -1,0 +1,26 @@
+.containerTitle{
+    margin:20px 0;
+
+    p{
+        color: #000;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.32px;
+    }
+}
+
+.container{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    
+}
+
+@media (max-width:875px) {
+    .container{
+        justify-content: space-evenly;
+    }
+}

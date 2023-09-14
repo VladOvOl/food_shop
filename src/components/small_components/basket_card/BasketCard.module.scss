@@ -1,0 +1,86 @@
+.container{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.containerImgText{
+    display: flex;
+    align-items: center;
+    width: 320px;
+    
+    img{
+        width: 80px;
+        height: 80px;
+        margin-right: 15px;
+    }
+
+    .title{
+        color: #000;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.22px;
+    }
+
+    .underTitle{
+        color: #8D8D8D;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        letter-spacing: 0.18px;
+    }
+}
+
+.containerCount{
+    display: flex;
+    align-items: center;
+
+    .minus{
+        
+        background-color: #8D8D8D;
+        text-align: center;
+    }
+
+    .containercount{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 100%;  
+        margin: 0 10px;
+    }
+    .count{
+        color: #000;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.22px;
+
+    }
+    img{
+        cursor: pointer;
+    }
+}
+
+.containerPrice{
+
+    p{
+        color: #000;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.22px;
+    }
+}
+
+.containerDeleteBtn{
+    cursor: pointer;
+}
+

@@ -1,0 +1,240 @@
+%button{
+    font-size: 14px;
+    border-radius: 10px;
+    border: none;
+    color: #2C2C2C;
+    background: transparent;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.21px;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+
+    &:hover{
+        background-color: #dadada;
+        transition: all 0.4s ease-in-out;
+    }
+    &:active{
+        background-color: white;
+    }
+}
+
+
+.container{
+    width: 280px;
+
+
+    .img{
+       width: 280px
+    }
+    
+    .title{
+        margin: 15px 0 20px;
+        color: #000;
+        text-align: center;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        letter-spacing: 0.2px;
+    }
+}
+
+.containerMenu{
+    padding: 7px;
+    width: 266px/280px*100%;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.containerDough{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+
+    .button{
+        @extend %button;
+        height: 32px;
+        width: 132px;
+    }
+    .btnActive{
+        background-color: white;  
+    }
+
+
+    
+}
+.containerSize{
+    display: flex;
+    justify-content: space-between;
+
+    .button{
+        @extend %button;
+        width: 86px;
+        height: 32px;
+    }
+    .btnActive{
+        background-color: white;  
+    }
+}
+
+.containerBottom{
+    padding: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .containerPrice{
+        display: flex;
+
+        .price{
+            color: #000;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.33px;
+        }
+    }
+
+    .containerBtn{
+        height: 40px;
+        width: 145px/280px*100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        border: 2px solid #EB5A1E;
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+
+        p{
+            color: #EB5A1E;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+        
+        .count{
+            margin-left: 3px;
+            padding: 3px 9.5px;
+            color: white;
+            background-color: #EB5A1E;
+            border-radius: 50%;
+        }
+
+        &:hover{
+            background-color: #EB5A1E;
+            transition: all 0.4s ease-in-out;
+
+            p{
+                color: white;
+            }
+
+            .count{
+                color: #EB5A1E;
+                background-color: white;
+            }
+        }
+    }
+
+}
+
+@media (max-width:1500px) and (min-width:1215px) {
+    .container{
+        width: 225px;
+
+        .img{
+            width: 225px;
+        }
+    }
+
+    .containerBottom{
+        flex-direction: column;
+
+        .containerPrice{
+
+            img{
+                height: 20px;
+            }
+            .price{
+                font-size: 16px;
+            }
+        }
+        .containerBtn{
+            width: 80%;
+            margin-top: 10px;
+        }
+
+
+
+    }
+}
+@media (max-width:1115px) and (min-width:875px) {
+    .container{
+        width: 213px;
+
+        .img{
+            width: 213px;
+        }
+    }
+
+    .containerBottom{
+        flex-direction: column;
+
+        .containerPrice{
+
+            img{
+                height: 20px;
+            }
+            .price{
+                font-size: 16px;
+            }
+        }
+        .containerBtn{
+            width: 80%;
+            margin-top: 10px;
+        }
+
+
+
+    }
+}
+
+@media (max-width:721px) and (min-width:560px){
+    .container{
+        width: 213px;
+
+        .img{
+            width: 213px;
+        }
+    }
+
+    .containerBottom{
+        flex-direction: column;
+
+        .containerPrice{
+
+            img{
+                height: 20px;
+            }
+            .price{
+                font-size: 16px;
+            }
+        }
+        .containerBtn{
+            width: 80%;
+            margin-top: 10px;
+        }
+
+
+
+    }
+}
+
+
