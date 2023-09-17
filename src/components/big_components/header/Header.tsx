@@ -1,16 +1,20 @@
 import {FC, useState} from 'react'
 import style from './Header.module.scss'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../../redux/hooks'
 import { changeStateBasketBtn, changeStateMenuBtn } from '../../../redux/slices/menuToolkitSlice'
-import Menu from '../menu/Menu'
+import BasketMini from '../../small_components/mini_basket/BasketMini'
+
 
 const Header:FC = () => {
     let dispatch = useAppDispatch()
 
     let stateBasketContainer = useAppSelector(state => state.menuToolkit.stateMenuBtn)
+    let statebasketMiniBtn = useAppSelector(state => state.menuToolkit.stateBasketMiniBtn)
     let totalCount = useAppSelector(state=>state.menuToolkit.totalCount)
     let totalPrice = useAppSelector(state => state.menuToolkit.totalPrice)
+
+    let location = useLocation()
 
     let[btn,setBtn]=useState(false)
     let navigate = useNavigate()
@@ -55,6 +59,8 @@ const Header:FC = () => {
                 </div>
             </div>
         </NavLink>
+
+        {location.pathname !== '/basket' && <BasketMini/>}
     </header>
   )
 }

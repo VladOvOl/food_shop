@@ -16,6 +16,7 @@ export interface IArrBasket {
 interface IinitialState{
     stateMenuBtn:boolean,
     stateBasketBtn:boolean,
+    stateBasketMiniBtn:boolean,
     ////////////////////
     arrBasket:IArrBasket[],
     totalCount:number,
@@ -25,6 +26,7 @@ interface IinitialState{
 const initialState:IinitialState={
     stateMenuBtn:false,
     stateBasketBtn:false,
+    stateBasketMiniBtn:false,
     ////////////////////
     arrBasket:[],
     totalCount:0,
@@ -44,6 +46,9 @@ const menuToolkit = createSlice({
         changeStateBasketBtn(state){
             state.stateBasketBtn = !state.stateBasketBtn
             console.log(state.stateBasketBtn)
+        },
+        changeStateBasketMiniBtn(state,action){
+            state.stateBasketMiniBtn = action.payload
         },
         addToArrBasket(state,action:PayloadAction<IArrBasket>){
 
@@ -96,4 +101,4 @@ const menuToolkit = createSlice({
 
 export default menuToolkit.reducer
 
-export const {changeStateMenuBtn,changeStateBasketBtn,addToArrBasket,removeFromBasket,clearBasket} = menuToolkit.actions
+export const {changeStateMenuBtn,changeStateBasketBtn,changeStateBasketMiniBtn,addToArrBasket,removeFromBasket,clearBasket} = menuToolkit.actions

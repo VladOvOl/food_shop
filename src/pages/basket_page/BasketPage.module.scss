@@ -3,6 +3,7 @@
     min-height: 40vh;
     background-color: white;
     border-radius: 0 0 30px 30px;
+
     
 }
 
@@ -22,6 +23,11 @@
     align-items: center;
     justify-content: space-between;
 
+    @media (max-width:1115px) {
+        margin-top: 0;
+        
+    }
+
     .containerLogo{
 
         span{
@@ -31,6 +37,10 @@
             font-weight: 700;
             line-height: normal;
             letter-spacing: 0.32px;
+
+            @media (max-width:400px) {
+                font-size: 25px;
+            }
         }
     }
 
@@ -58,6 +68,10 @@
             font-weight: 400;
             line-height: normal;
             letter-spacing: 0.22px;
+
+            @media (max-width:470px) {
+                font-size: 18px;
+            }
         }
 
         .totalPrice{
@@ -67,6 +81,10 @@
             font-weight: 400;
             line-height: normal;
             letter-spacing: 0.22px;
+
+            @media (max-width:470px) {
+                font-size: 18px;
+            }
         }
     }
 
@@ -87,6 +105,15 @@
             background: #FFF;
             transition: all 0.4s ease-in-out;
             cursor: pointer;
+
+            @media (max-width:550px) {
+                width: 45%;
+                height: 45px;
+
+                p{
+                    font-size: 14px;
+                }
+            }
 
             p{
                 color: #c8c8c8;
@@ -121,6 +148,13 @@
             line-height: normal;
             cursor: pointer;
 
+            @media (max-width:550px) {
+                width: 45%;
+                height: 45px;
+                font-size: 14px;
+
+                
+            }
         }
     }
 }
@@ -135,4 +169,36 @@
         width: 299px;
         height: 255px;
     }
+}
+
+@media (max-width:1115px) {
+    .wraper{
+        width: 100%;
+    }
+}
+
+.dpnone{
+    display: none;
+}
+
+@media (max-width:550px) {
+
+    .containerLogo{
+
+        img{
+            display: none;
+        }
+    }
+    
+}
+
+@media (max-width:450px) {
+
+    .containerLogo{
+
+        img{
+            display: none;
+        }
+    }
+    
 }

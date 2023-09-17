@@ -6,7 +6,9 @@ import style from './Navbar.module.scss'
 export const Navbar:FC = () => {
 
 
+
   return (
+
             <div className={style.container}>
                 <NavLink  to={'/'}className={style.link}>Home</NavLink>
                 <NavLink  to={'/combo'}className={style.link}>Combo</NavLink>

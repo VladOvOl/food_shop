@@ -1,9 +1,9 @@
 import {FC} from 'react'
 import style from './BasketPage.module.scss'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import BasketItem from '../../components/small_components/basket_card/BasketCard'
 import { useAppDispatch,useAppSelector } from '../../redux/hooks'
-import { clearBasket } from '../../redux/slices/menuToolkitSlice'
+import { changeStateBasketMiniBtn, clearBasket } from '../../redux/slices/menuToolkitSlice'
 
 const Basket:FC =()=> {
 
@@ -11,9 +11,14 @@ const Basket:FC =()=> {
  let totalCount = useAppSelector(state=>state.menuToolkit.totalCount)
  let totalPrice = useAppSelector(state=>state.menuToolkit.totalPrice)
 
+ 
+
  let dispatch = useAppDispatch()
  let navigate = useNavigate()
- let goBack =()=> navigate(-1)
+ let goBack =()=> {
+    navigate(-1)
+    dispatch(changeStateBasketMiniBtn(false))
+ }
 
 
   return (

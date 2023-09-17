@@ -47,7 +47,9 @@ const BasketItem:FC<IArrBasket> = (props)=> {
         <div className={style.containerDeleteBtn}>
             <img src={require('../../../assets/icons/deleteBtn.png')} alt="" />
         </div>
+        
     </div>
+
     
   )
 }

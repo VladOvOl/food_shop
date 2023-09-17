@@ -1,0 +1,32 @@
+.container{
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 120px;
+    margin-right: 7%;
+
+    .containerImg{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    img{
+        width: 50px;
+        opacity: 1;
+    }
+    p{
+        font-size: 20px;
+        font-weight: 900;
+        position: absolute;
+        top: 40px;
+        right: 15px;
+        color: rgb(0, 0, 0);
+        
+    }
+}
+
+@media (max-width:600px) {
+    .container{
+        display: block;
+    }
+}
