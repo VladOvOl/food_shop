@@ -4,7 +4,7 @@ import style from './Canvas2.module.scss'
 const Canvas2:FC = () => {
   return (
     <div className={style.container}>
-        <div className={style.containerFood}>
+        <div className={style.containerBurger}>
             <div className={style.containerText}>
                 <h1>BEEF CLASSIC</h1>
                 <h1>BURGERS</h1>
@@ -15,7 +15,7 @@ const Canvas2:FC = () => {
                 <img src="https://ikura.ua/Media/images/catalog/big/9818e4c13c979f078a15c667622fa16e.jpg" alt="" />
             </div>
         </div>
-        <div className={style.containerFood}>
+        <div className={style.containerSoup}>
 
             <div className={style.containerImg}>
                 <img src="https://ikura.ua/Media/images/catalog/big/0c45dd409dfc4475a51f8b441e753ab3.jpg" alt="" />
@@ -28,7 +28,7 @@ const Canvas2:FC = () => {
 
            
         </div>
-        <div className={style.containerFood}>
+        <div className={style.containerPizza}>
             <div className={style.containerText}>
                 <h1>THE BEST PIZZA</h1>
                 <p>Our pizza with seafood is mixed perfectly with a glass of white wine</p>

@@ -3,6 +3,7 @@ import style from './Layout.module.scss'
 import Header from '../components/big_components/header/Header'
 import { Outlet } from 'react-router-dom'
 import Navbar from '../components/big_components/navbar/Navbar'
+import Footer from '../components/big_components/footer/Footer'
 
 
 const Layout:FC =() => {
