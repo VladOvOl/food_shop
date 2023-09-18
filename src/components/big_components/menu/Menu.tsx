@@ -29,52 +29,69 @@ const  Menu:FC =()=> {
   return (
     <div className={style.container}>
             <div className={style.containerLinks}>
-                
-                <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
-                    <img src={require('./icons/icons/home.png')} alt="" />
-                    <NavLink  to={'/'}className={style.link}>Home</NavLink>
-                </div>
-                
-                <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
-                    <img src={require('./icons/icons/combo.png')} alt="" />
-                    <NavLink  to={'/combo'}className={style.link}>Combo</NavLink>
-                </div>
-                
 
-                <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
-                <img src={require('./icons/icons/pizza.png')} alt="" />
-                <NavLink  to={'/pizza'}className={style.link}>Pizza</NavLink>
-                </div>
-                
-                <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
-                <img src={require('./icons/icons/sushi.png')} alt="" />
-                <NavLink  to={'/sushi'}className={style.link}>Sushi</NavLink>
-                </div>
-                
-                <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
-                <img src={require('./icons/icons/burger.png')} alt="" />
-                <NavLink  to={`/burger`}className={style.link}>Burgers</NavLink>
-                </div>
-                
-                <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
-                <img src={require('./icons/icons/bowley.png')} alt="" />
-                <NavLink  to={'/bowley'}className={style.link}>Bowley</NavLink>
-                </div>
-                
-                <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
-                <img src={require('./icons/icons/soup.png')} alt="" />
-                <NavLink  to={'/soup'}className={style.link}>Soup</NavLink>
-                </div>
-                
-                <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
-                <img src={require('./icons/icons/ramen.png')} alt="" />
-                <NavLink  to={'/wok'}className={style.link}>Wok</NavLink>
-                </div>
+                <NavLink  to={'/'}className={style.link}>
+                    <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
+                        <img src={require('./icons/icons/home.png')} alt="" />
+                        <span>Home</span>
+                    </div>
+                </NavLink>  
 
-                <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
-                <img src={require('./icons/icons/salad.png')} alt="" />
-                <NavLink  to={'/salad'}className={style.link}>Salad</NavLink>
-                </div>
+                <NavLink  to={'/combo'}className={style.link}>
+                    <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
+                        <img src={require('./icons/icons/combo.png')} alt="" />
+                        <span>Combo</span>
+                    </div>
+                </NavLink>
+
+                <NavLink  to={'/pizza'}className={style.link}>
+                    <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
+                        <img src={require('./icons/icons/pizza.png')} alt="" />
+                        <span>Pizza</span>
+                    </div>
+                </NavLink>
+
+                <NavLink  to={'/sushi'}className={style.link}>
+                    <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
+                        <img src={require('./icons/icons/sushi.png')} alt="" />
+                        <span>Sushi</span>
+                    </div>
+                </NavLink>
+
+                <NavLink  to={`/burger`}className={style.link}>
+                    <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
+                        <img src={require('./icons/icons/burger.png')} alt="" />
+                        <span>Burgers</span>
+                    </div>
+                </NavLink>
+                
+                <NavLink  to={'/bowley'}className={style.link}>
+                    <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
+                        <img src={require('./icons/icons/bowley.png')} alt="" />
+                        <span>Bowley</span>
+                    </div>
+                </NavLink>
+                
+                <NavLink  to={'/soup'}className={style.link}>
+                    <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
+                        <img src={require('./icons/icons/soup.png')} alt="" />
+                        <span>Soup</span>
+                    </div>
+                </NavLink>
+                
+                <NavLink  to={'/wok'}className={style.link}>
+                    <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
+                        <img src={require('./icons/icons/ramen.png')} alt="" />
+                        <span>Wok</span>
+                    </div>
+                </NavLink>
+
+                <NavLink  to={'/salad'}className={style.link}>
+                    <div className={style.containerLink} onClick={()=>dispatch(changeStateMenuBtn())}>
+                        <img src={require('./icons/icons/salad.png')} alt="" />
+                        <span>Salad</span>
+                    </div>
+                </NavLink>
           
             </div>
         </div>

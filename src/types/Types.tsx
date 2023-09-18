@@ -12,5 +12,6 @@ export interface ICard{
     type?:string,
     img:string,
     title:string,
-    price:number
+    price:number,
+    ingridients?:string
 }

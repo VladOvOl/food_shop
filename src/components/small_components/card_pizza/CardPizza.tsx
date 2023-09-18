@@ -32,7 +32,7 @@ const CardPizza:FC<ICardPizza> = (props) => {
   return (
     <div className={style.container} >
 
-        <Link to={`/pizza/${props.id}`}><img className={style.img}src={props.img} alt=""/></Link>
+        <Link to={`/pizza/${props.title}`}><img className={style.img}src={props.img} alt=""/></Link>
         
         <p className={style.title}>{props.title}</p>
 

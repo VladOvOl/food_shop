@@ -15,8 +15,10 @@ const Card:FC<ICard> = (props) => {
   return (
     <div className={style.container} >
 
-    <img className={style.img}src={props.img} alt=""/>
-    
+    <Link to={`/food/${props.title}`}>
+        <img className={style.img}src={props.img} alt=""/>
+    </Link>
+
     <p className={style.title}>{props.title}</p>
 
     <div className={style.containerBottom}>

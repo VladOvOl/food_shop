@@ -5,8 +5,9 @@ import PizzaPage from './pages/pizza_page/PizzaPage'
 import HomePage from './pages/home_page/HomePage'
 import BasketPage from './pages/basket_page/BasketPage'
 import PageCarcas from './pages/page_carcas/PageCarcas'
-import PizzaItem from './pages/pizza_page/PizzaItem'
+import PizzaItemPage from './pages/pizza_item_page/PizzaItemPage'
 import Menu from './components/big_components/menu/Menu'
+import PageCarcasItem from './pages/page_carcas_item/PageCarcasItem'
 
 const App:FC = () => {
 
@@ -19,9 +20,10 @@ const App:FC = () => {
         <Route index element={<HomePage/>}/>
         <Route path='/pizza' element={<PizzaPage />}/>
         <Route path='/menu' element={<Menu/>}/>
-        <Route path='/pizza/:id' element={<PizzaItem/>}/>
+        <Route path='/pizza/:title' element={<PizzaItemPage/>}/>
         <Route path='/basket' element={<BasketPage/>}/>
         <Route path='/:type' element={<PageCarcas/>}/>
+        <Route path='/:type/:title' element={<PageCarcasItem/>}/>
       </Route>
     </Routes>
   </BrowserRouter>

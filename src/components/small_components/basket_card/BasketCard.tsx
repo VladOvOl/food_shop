@@ -5,7 +5,7 @@ import { removeFromBasket,addToArrBasket } from '../../../redux/slices/menuToolk
 import { IArrBasket } from '../../../redux/slices/menuToolkitSlice'
 
 
-const BasketItem:FC<IArrBasket> = (props)=> {
+const BasketCard:FC<IArrBasket> = (props)=> {
 
     let dispatch = useDispatch()
 
@@ -54,4 +54,4 @@ const BasketItem:FC<IArrBasket> = (props)=> {
   )
 }
 
-export default BasketItem
+export default BasketCard
