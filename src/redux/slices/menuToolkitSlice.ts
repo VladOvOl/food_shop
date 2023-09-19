@@ -20,7 +20,12 @@ interface IinitialState{
     ////////////////////
     arrBasket:IArrBasket[],
     totalCount:number,
-    totalPrice:number
+    totalPrice:number,
+    /////////////////////
+    stateInputValue:string,
+    stateSortValue:string,
+    /////////////////////
+    //statePizzaPagination:number,
 }
 
 const initialState:IinitialState={
@@ -30,7 +35,12 @@ const initialState:IinitialState={
     ////////////////////
     arrBasket:[],
     totalCount:0,
-    totalPrice:0
+    totalPrice:0,
+    /////////////
+    stateInputValue:'',
+    stateSortValue:'найпопулярніші',
+    ///////////////////////////
+    
 }
 
 
@@ -93,6 +103,15 @@ const menuToolkit = createSlice({
             state.totalCount=0
             state.totalPrice=0
 
+        },
+
+        changeStateForSearch(state,action){
+            state.stateInputValue=action.payload
+            
+        },
+        changeStateForSort(state,action){
+            state.stateSortValue=action.payload
+            
         }
         
 
@@ -101,4 +120,7 @@ const menuToolkit = createSlice({
 
 export default menuToolkit.reducer
 
-export const {changeStateMenuBtn,changeStateBasketBtn,changeStateBasketMiniBtn,addToArrBasket,removeFromBasket,clearBasket} = menuToolkit.actions
+export const {changeStateMenuBtn,changeStateBasketBtn,
+            changeStateBasketMiniBtn,addToArrBasket,
+            removeFromBasket,clearBasket,
+            changeStateForSearch,changeStateForSort} = menuToolkit.actions

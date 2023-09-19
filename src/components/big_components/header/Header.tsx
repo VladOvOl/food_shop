@@ -4,6 +4,7 @@ import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../../redux/hooks'
 import { changeStateBasketBtn, changeStateMenuBtn } from '../../../redux/slices/menuToolkitSlice'
 import BasketMini from '../../small_components/mini_basket/BasketMini'
+import {motion } from 'framer-motion'
 
 
 const Header:FC = () => {

@@ -32,8 +32,6 @@ const PageCarcasItem:FC = () => {
       })
     },[])
   
-
-        console.log(data)
       if(data){
         return (
           <div className={style.container}>
