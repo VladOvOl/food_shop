@@ -111,8 +111,8 @@ const menuToolkit = createSlice({
         },
         addToArrBasket(state,action:PayloadAction<IArrBasket>){
 
-            const findItem = state.arrBasket.find((obj)=>obj.title===action.payload.title 
-            && obj.dougth===action.payload.dougth && obj.size === action.payload.size)
+            const findItem = state.arrBasket.find((obj)=>(obj.title===action.payload.title 
+            && obj.dougth===action.payload.dougth && obj.size === action.payload.size))
 
             if(findItem){
                 if(findItem.count){
@@ -128,8 +128,8 @@ const menuToolkit = createSlice({
             
         },
         removeFromBasket(state,action:PayloadAction<IArrBasket>){
-            const findItem = state.arrBasket.find((obj)=>obj.id === action.payload.id
-            && obj.dougth===action.payload.dougth && obj.size === action.payload.size)
+            const findItem = state.arrBasket.find((obj)=>(obj.title === action.payload.title
+            && obj.dougth===action.payload.dougth && obj.size === action.payload.size))
             if(findItem){
                 if(findItem.count){
                     findItem.count--
@@ -140,13 +140,29 @@ const menuToolkit = createSlice({
                 if(findItem.count == 0){
                     
                     const index = state.arrBasket.indexOf(action.payload);
-                    console.log(index); 
                     state.arrBasket.splice(index, 1);
                     
                 }
             }
 
         },
+        removeAllFromBasket(state,action:PayloadAction<IArrBasket>){
+            const findItem = state.arrBasket.find((obj)=>(obj.title === action.payload.title
+            && obj.dougth===action.payload.dougth && obj.size === action.payload.size))
+            if(findItem) {
+                if(findItem.count){
+                    state.totalCount = state.totalCount - findItem.count
+                    state.totalPrice = state.totalPrice - findItem.count*action.payload.price
+                }
+                let index = state.arrBasket.indexOf(findItem);
+                console.log(index); 
+                console.log(action.payload); 
+                state.arrBasket.splice(index, 1);
+            }
+
+            
+        },
+
         clearBasket(state){
             state.arrBasket=[]
             state.totalCount=0
@@ -186,7 +202,7 @@ export default menuToolkit.reducer
 
 export const {changeStateMenuBtn,changeStateBasketBtn,
             changeStateBasketMiniBtn,addToArrBasket,
-            removeFromBasket,clearBasket,
+            removeFromBasket,removeAllFromBasket,clearBasket,
             changeStateForSearch,changeStateForSort,
             changePizzapaginationLength,changePizzapaginationCount,
             changeCarcaspaginationCount2} = menuToolkit.actions

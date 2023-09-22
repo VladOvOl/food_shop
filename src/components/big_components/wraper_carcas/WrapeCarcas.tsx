@@ -23,7 +23,7 @@ const Wraper:FC = () => {
       sort = ''
     }
     if(sortState=="по ціні"){
-      sort = 'smallPrice'
+      sort = 'price'
     }
     if(sortState=="по алфавіту"){
       sort = 'title'

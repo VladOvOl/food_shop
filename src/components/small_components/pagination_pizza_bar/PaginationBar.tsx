@@ -9,8 +9,7 @@ const PaginationBar :FC= () => {
   let page = useAppSelector(state => state.menuToolkit.statePizzaPaginationLength)
   let currentPage = useAppSelector(state => state.menuToolkit.statePizzaPaginationCount)
   const arr = Array.from({length: page}, (_, index) => index + 1);
-  console.log(arr);
-  console.log(page);
+
 
   return (
     <div className={style.container}>

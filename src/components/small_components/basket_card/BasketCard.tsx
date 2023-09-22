@@ -1,7 +1,7 @@
 import {FC} from 'react'
 import style from './BasketCard.module.scss'
 import { useDispatch } from 'react-redux'
-import { removeFromBasket,addToArrBasket } from '../../../redux/slices/menuToolkitSlice'
+import { removeFromBasket,addToArrBasket, removeAllFromBasket } from '../../../redux/slices/menuToolkitSlice'
 import { IArrBasket } from '../../../redux/slices/menuToolkitSlice'
 
 
@@ -19,6 +19,10 @@ const BasketCard:FC<IArrBasket> = (props)=> {
     if(props.size===3){
        size='50cм'
     }
+
+    console.log(props)
+
+
    
   return (
     <div className={style.container}>
@@ -45,7 +49,8 @@ const BasketCard:FC<IArrBasket> = (props)=> {
         </div>
 
         <div className={style.containerDeleteBtn}>
-            <img src={require('../../../assets/icons/deleteBtn.png')} alt="" />
+            <img src={require('../../../assets/icons/deleteBtn.png')} 
+            onClick={()=>dispatch(removeAllFromBasket(props))}alt="" />
         </div>
         
     </div>
