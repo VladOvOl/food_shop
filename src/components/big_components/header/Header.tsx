@@ -42,7 +42,7 @@ const Header:FC = () => {
         <div className={style.containerLogo}>
             <img src={require('../../../assets/icons/logo.png')} alt="" height={55} width={55}/>
             <div className={style.containerTitle}>
-                <p className={style.title}>REACT PIZZA</p>
+                <p className={style.title}>REACT pizza</p>
                 <p className={style.underTitle}>Найкраща піцца у нас!</p>
             </div>
         </div>

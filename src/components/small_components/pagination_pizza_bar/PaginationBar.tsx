@@ -13,7 +13,7 @@ const PaginationBar :FC= () => {
 
   return (
     <div className={style.container}>
-      {arr.map((obj)=><p  className={currentPage == obj ? style.active : style.passive} onClick={()=>dispatch(changePizzapaginationCount(obj))}>{obj}</p>)}  
+      {arr.map((obj,index)=><p  key = {index}className={currentPage == obj ? style.active : style.passive} onClick={()=>dispatch(changePizzapaginationCount(obj))}>{obj}</p>)}  
     </div>
   )
 }

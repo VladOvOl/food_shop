@@ -139,7 +139,7 @@ const menuToolkit = createSlice({
 
                 if(findItem.count == 0){
                     
-                    const index = state.arrBasket.indexOf(action.payload);
+                    const index = state.arrBasket.indexOf(findItem);
                     state.arrBasket.splice(index, 1);
                     
                 }

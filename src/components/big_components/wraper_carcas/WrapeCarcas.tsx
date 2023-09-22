@@ -31,7 +31,7 @@ const Wraper:FC = () => {
 
 
     useEffect(()=>{
-      axios.get(`https://64ecacbbf9b2b70f2bfac529.mockapi.io/food/?type=${type}&sortBy=${sort}&title=${inputState}&limit=12&page=${page[0].current}`).then((res)=>setData(res.data)).catch(error => {
+      axios.get(`https://64ecacbbf9b2b70f2bfac529.mockapi.io/food/?type=${type}&limit=12&page=${page[0].current}&sortBy=${sort}&title=${inputState}`).then((res)=>setData(res.data)).catch(error => {
         // handle any errors/rejected Promises
       })
     },[type,page[0].current,inputState,sortState])

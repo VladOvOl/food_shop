@@ -7,15 +7,13 @@ import { Link } from 'react-router-dom'
  
 const CardPizza:FC<ICardPizza> = (props) => {
 
-    const dispatch = useAppDispatch()
-    const pizzaCount = useAppSelector((state) => state.menuToolkit.arrBasket.find((obj)=>obj.title == props.title))
-    //const pizzaCount2 = useSelector((state) => state.menuToolkit.arrBasket)
     let[stateDougth,setStateDought] = useState(false)
     let[stateSize,setStateize] = useState(1)
+    const dispatch = useAppDispatch()
+    const pizzaCount = useAppSelector((state) => state.menuToolkit.arrBasket.find((obj)=>obj.title == props.title && obj.dougth=== stateDougth && obj.size ===stateSize ))
+  
 
     const adedPizza = pizzaCount ? pizzaCount.count : 0
-
-       //console.log(pizzaCount)
 
     
     let price:number=props.smallPrice
