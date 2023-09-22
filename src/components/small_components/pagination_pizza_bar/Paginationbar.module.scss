@@ -1,0 +1,23 @@
+.container{
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+
+    .active{  color: white;
+        font-size: 20px;
+        font-weight: 800;
+        background-color: orangered;
+        padding: 14px 22px;
+        border-radius: 50%;
+        
+    }
+    .passive{  color: black;
+        font-size: 20px;
+        font-weight: 800;
+        background-color: white;
+        border: 2px solid orangered;
+        padding: 12px 20px;
+        border-radius: 50%;
+        
+    }
+}

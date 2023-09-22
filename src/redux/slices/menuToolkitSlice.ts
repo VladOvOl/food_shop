@@ -1,5 +1,6 @@
 import { createSlice ,PayloadAction } from "@reduxjs/toolkit";
 import { current } from "@reduxjs/toolkit";
+import { IPagination } from "../../types/Types";
 
 
 
@@ -25,7 +26,12 @@ interface IinitialState{
     stateInputValue:string,
     stateSortValue:string,
     /////////////////////
-    //statePizzaPagination:number,
+    statePizzaPaginationLength:number,
+    statePizzaPaginationCount:number,
+    stateCarcasPaginationLength:number,
+    stateCarcasPaginationCount:number,
+
+    paginationArr:IPagination[]
 }
 
 const initialState:IinitialState={
@@ -40,6 +46,49 @@ const initialState:IinitialState={
     stateInputValue:'',
     stateSortValue:'найпопулярніші',
     ///////////////////////////
+    statePizzaPaginationLength:0,
+    statePizzaPaginationCount:1,
+    stateCarcasPaginationLength:1,
+    stateCarcasPaginationCount:1,
+
+    paginationArr:[
+        {
+            pathname:"/combo",
+            length:2,
+            current:1
+        },
+        {
+            pathname:"/burger",
+            length:2,
+            current:1
+        },
+        {
+            pathname:"/sushi",
+            length:2,
+            current:1
+        },
+        {
+            pathname:"/bowley",
+            length:1,
+            current:1
+        },
+        {
+            pathname:"/soup",
+            length:2,
+            current:1
+        },
+        {
+            pathname:"/wok",
+            length:2,
+            current:1
+        },
+        {
+            pathname:"/salad",
+            length:2,
+            current:1
+        }
+    ]
+    
     
 }
 
@@ -113,6 +162,21 @@ const menuToolkit = createSlice({
             state.stateSortValue=action.payload
             
         }
+        ,
+        changePizzapaginationLength(state,action){
+            state.statePizzaPaginationLength=action.payload
+        },
+        changePizzapaginationCount(state,action){
+            state.statePizzaPaginationCount=action.payload
+            
+        },
+        changeCarcaspaginationCount2(state,action){
+            console.log(action.payload)
+            //state.paginationArr.map((obj)=>obj.pathname==action.payload.pathname && {...state.paginationArr, current : action.payload.current})
+            state.paginationArr.forEach((obj)=> obj.pathname === action.payload.pathname ? obj.current = action.payload.current : obj.current = obj.current)
+            console.log(current(state.paginationArr))
+        
+        }
         
 
     }
@@ -123,4 +187,6 @@ export default menuToolkit.reducer
 export const {changeStateMenuBtn,changeStateBasketBtn,
             changeStateBasketMiniBtn,addToArrBasket,
             removeFromBasket,clearBasket,
-            changeStateForSearch,changeStateForSort} = menuToolkit.actions
+            changeStateForSearch,changeStateForSort,
+            changePizzapaginationLength,changePizzapaginationCount,
+            changeCarcaspaginationCount2} = menuToolkit.actions

@@ -15,3 +15,8 @@ export interface ICard{
     price:number,
     ingridients?:string
 }
+export interface IPagination{
+    pathname:string,
+    length:number,
+    current:number
+}
